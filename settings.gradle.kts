@@ -29,8 +29,8 @@ plugins {
 rootProject.name = "libpebbleroot"
 
 include(":libpebble3")
-include(":blobdbgen")
-include(":blobannotations")
+//include(":blobdbgen")
+//include(":blobannotations")
 // include(":composeApp")
 // include(":pebble")
 // include(":util")
