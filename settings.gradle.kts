@@ -22,12 +22,16 @@ dependencyResolutionManagement {
     }
 }
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
+}
+
 rootProject.name = "libpebbleroot"
 
 include(":libpebble3")
 include(":blobdbgen")
 include(":blobannotations")
-include(":composeApp")
-include(":pebble")
-include(":util")
-include(":experimental")
+// include(":composeApp")
+// include(":pebble")
+// include(":util")
+// include(":experimental")
