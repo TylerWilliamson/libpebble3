@@ -51,3 +51,15 @@ android {
         }
     }
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                groupId = "com.github.TylerWilliamson"
+                artifactId = "libpebble3"
+                version = "1.0.0"
+            }
+        }
+    }
+}
