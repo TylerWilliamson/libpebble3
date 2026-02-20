@@ -10,19 +10,6 @@ plugins {
     alias(libs.plugins.kotlinx.atomicfu)
 }
 
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/pebble-dev/libpebblecommon")
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
-    }
-}
-
 room {
     schemaDirectory("schema")
 }
@@ -50,6 +37,13 @@ android {
             consumerProguardFiles("consumer-rules.pro")
         }
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
 }
 
 afterEvaluate {
@@ -58,7 +52,7 @@ afterEvaluate {
             create<MavenPublication>("release") {
                 groupId = "com.github.TylerWilliamson"
                 artifactId = "libpebble3"
-                version = "1.0.0"
+                version = "1.0.1"
             }
         }
     }
