@@ -224,6 +224,12 @@ afterEvaluate {
     tasks.named("kspReleaseKotlinAndroid") {
         dependsOn("kspCommonMainKotlinMetadata")
     }
+    tasks.named("sourcesJar") {
+        dependsOn("kspCommonMainKotlinMetadata")
+    }
+    tasks.named("jvmSourcesJar") {
+        dependsOn("kspCommonMainKotlinMetadata")
+    }
 
 //    if (enableIosTarget) {
 //        tasks.named("kspKotlinIosArm64") {
