@@ -18,7 +18,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.github.TylerWilliamson"
             artifactId = "libpebble3"
-            version = "1.1.0"
+            version = "1.1.1"
         }
     }
 }
@@ -160,6 +160,9 @@ afterEvaluate {
         dependsOn("kspCommonMainKotlinMetadata")
     }
     tasks.named("kspReleaseKotlinAndroid") {
+        dependsOn("kspCommonMainKotlinMetadata")
+    }
+    tasks.named("jvmSourcesJar") {
         dependsOn("kspCommonMainKotlinMetadata")
     }
 }
